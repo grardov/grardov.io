@@ -1,9 +1,14 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/solid";
 
-const inter = Inter({ subsets: ['latin'] })
+import Container from "../components/Container";
+import Heading from "../components/Heading";
+import Text from "../components/Text";
+import Box from "../components/Box";
+import Stack from "../components/Stack";
+import ColorBar from "../components/ColorBar";
+import WorkExperience from "../components/WorkExperience";
 
 export default function Home() {
   return (
@@ -14,110 +19,180 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-        <div className={styles.description}>
-          <p>
-            Get started by editing&nbsp;
-            <code className={styles.code}>pages/index.tsx</code>
-          </p>
-          <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
+      <Box as="main">
+        <ColorBar />
+        <Container className="my-8">
+          <Stack direction="col" spacing="space-y-6">
+            <Stack spacing="space-x-4" className="items-center">
               <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
+                className="rounded-full"
+                src="/jpg/profile.jpg"
                 width={100}
-                height={24}
-                priority
+                height={100}
+                alt="Gerardo Valencia"
               />
-            </a>
-          </div>
-        </div>
-
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
-          </div>
-        </div>
-
-        <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Templates <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Discover and deploy boilerplate example Next.js&nbsp;projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <h2 className={inter.className}>
-              Deploy <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Instantly deploy your Next.js site to a shareable URL
-              with&nbsp;Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+              <Stack direction="col" spacing="space-y-2">
+                <Box>
+                  <Heading>Gerardo Valencia Rivero</Heading>
+                  <Text>Software Engineer</Text>
+                </Box>
+                <Text size="text-sm" weight="font-light" light>
+                  I&apos;m a software engineer passionate of create products
+                  that help people around the world using web technologies.
+                </Text>
+              </Stack>
+            </Stack>
+            <Box className="relative">
+              <div className="absolute -top-3 left-10 w-0 h-0 border-l-[12px] border-l-transparent border-b-[15px] border-b-slate-100 border-r-[12px] border-r-transparent" />
+              <Stack
+                direction="col"
+                spacing="space-y-2"
+                className="p-6 rounded-3xl bg-slate-100"
+              >
+                <Heading size="h3">About</Heading>
+                <Text className="leading-6" size="text-sm" weight="font-light">
+                  Hi 👋, my name is Gerardo but everybody calls me Gerry. I’m a
+                  software engineer based in Mérida Yucatan.
+                </Text>
+                <Text className="leading-6" size="text-sm" weight="font-light">
+                  I have more than 4 years of experience creating digital
+                  products using web technologies. Communication between API
+                  services and web clients. Experience integrating third-party
+                  services and low-code tools.
+                </Text>
+              </Stack>
+            </Box>
+            <Stack direction="col" spacing="space-y-8">
+              <Heading size="h3">Work experience</Heading>
+              <WorkExperience
+                from="2021"
+                util="Present"
+                title="Software Engineer at Perfekto"
+                location=" Mexico City, MX (Remotely)"
+                description="Founder member and part of the YC community. Develop the an web app MVP for the clients and improving the internal process for the delivery service using low-code tools to automate the process."
+                externalLink="https://perfekto.mx"
+              />
+              <WorkExperience
+                from="2020"
+                util="2021"
+                title="Software Engineer at SV Academy"
+                location="San Francisco, CA (Remotely)"
+                description="Founder member and part of the YC community. Develop the an web app MVP for the clients and improving the internal process for the delivery service using low-code tools to automate the process."
+                externalLink="https://sv.academy"
+              />
+              <WorkExperience
+                from="2019"
+                util="2020"
+                title="Front-end Engineer at Loft"
+                location="Mexico City, MX (Remotely)"
+                description="Founder member and part of the YC community. Develop the an web app MVP for the clients and improving the internal process for the delivery service using low-code tools to automate the process."
+                externalLink="https://truehome.com.mx"
+              />
+              <WorkExperience
+                from="2018"
+                util="2021"
+                title="Software Engineer at Yellowme"
+                location="Mérida, Yucatán, MX"
+                description="Founder member and part of the YC community. Develop the an web app MVP for the clients and improving the internal process for the delivery service using low-code tools to automate the process."
+                externalLink="https://yellowme.mx"
+              />
+              <WorkExperience
+                from="2017"
+                util="2018"
+                title="Webmaster at SIF Language School"
+                location="Veracruz, Veracruz, MX (Remotely)"
+                description="Founder member and part of the YC community. Develop the an web app MVP for the clients and improving the internal process for the delivery service using low-code tools to automate the process."
+                externalLink="https://siflanguageschool.com"
+              />
+            </Stack>
+            <Stack direction="col" spacing="space-y-4">
+              <Heading size="h3">Contact</Heading>
+              <Stack spacing="space-x-2">
+                <Text
+                  className="w-[123px] text-gray-400"
+                  size="text-sm"
+                  weight="font-light"
+                >
+                  Email
+                </Text>
+                <a
+                  href="mailto:grdvalencia.r@gmail.com"
+                  className="hover:underline"
+                >
+                  <Text
+                    className="flex items-center"
+                    size="text-sm"
+                    weight="font-light"
+                  >
+                    grdvalencia.r@gmail.com
+                  </Text>
+                </a>
+              </Stack>
+              <Stack spacing="space-x-2">
+                <Text
+                  className="w-[123px] text-gray-400"
+                  size="text-sm"
+                  weight="font-light"
+                >
+                  Github
+                </Text>
+                <a
+                  href="https://github.com/grardov"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:underline"
+                >
+                  <Text
+                    className="flex items-center"
+                    size="text-sm"
+                    weight="font-light"
+                  >
+                    grardov{" "}
+                    <ArrowTopRightOnSquareIcon className="h-3 w-3 ml-2" />
+                  </Text>
+                </a>
+              </Stack>
+              <Stack spacing="space-x-2">
+                <Text
+                  className="w-[123px] text-gray-400"
+                  size="text-sm"
+                  weight="font-light"
+                >
+                  Twitter
+                </Text>
+                <a
+                  href="https://twitter.com/soygerrybee"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:underline"
+                >
+                  <Text
+                    className="flex items-center"
+                    size="text-sm"
+                    weight="font-light"
+                  >
+                    @soygerrybee{" "}
+                    <ArrowTopRightOnSquareIcon className="h-3 w-3 ml-2" />
+                  </Text>
+                </a>
+              </Stack>
+            </Stack>
+          </Stack>
+        </Container>
+        <footer>
+          <Container className="mt-24 mb-6">
+            <Stack className="w-full justify-between">
+              <Text size="text-sm" weight="font-light">
+                Not playing — Spotify
+              </Text>
+              <Text size="text-sm" weight="font-light">
+                Gerardo Valencia Rivero 2022
+              </Text>
+            </Stack>
+          </Container>
+          <ColorBar />
+        </footer>
+      </Box>
     </>
-  )
+  );
 }
