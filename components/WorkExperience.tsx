@@ -3,13 +3,14 @@ import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/solid";
 
 import Text from "./Text";
 import Stack from "./Stack";
+import Box from "./Box";
 
 interface Props {
   from: string;
   util: string;
   title: string;
   location: string;
-  description: string;
+  children: React.ReactNode;
   externalLink: string;
 }
 
@@ -18,15 +19,17 @@ export default function WorkExperience({
   util,
   title,
   location,
-  description,
+  children,
   externalLink,
 }: Props): React.ReactElement {
   return (
-    <Stack spacing="space-x-2">
-      <Text className="w-96" size="text-sm" weight="font-light">
-        {from} — {util}
-      </Text>
-      <Stack direction="col" spacing="space-y-1" className="items-start">
+    <Stack>
+      <Box className="hidden md:block min-w-[100px] mr-3">
+        <Text size="text-sm" weight="font-light">
+          {from} — {util}
+        </Text>
+      </Box>
+      <Stack direction="col" spacing="space-y-2">
         <a
           href={externalLink}
           target="_blank"
@@ -38,6 +41,13 @@ export default function WorkExperience({
           </Text>
         </a>
         <Text
+          className="block md:hidden w-96"
+          size="text-sm"
+          weight="font-light"
+        >
+          {from} — {util}
+        </Text>
+        <Text
           className="text-gray-500 leading-6"
           size="text-sm"
           weight="font-light"
@@ -45,9 +55,13 @@ export default function WorkExperience({
         >
           📍 {location}
         </Text>
-        <Text className="leading-6" size="text-sm" weight="font-light">
-          {description}
-        </Text>
+        <Stack
+          direction="col"
+          spacing="space-y-3"
+          className="leading-6 text-sm"
+        >
+          {children}
+        </Stack>
       </Stack>
     </Stack>
   );

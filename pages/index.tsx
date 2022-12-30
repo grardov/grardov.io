@@ -23,14 +23,18 @@ export default function Home() {
         <ColorBar />
         <Container className="my-8">
           <Stack direction="col" spacing="space-y-6">
-            <Stack spacing="space-x-4" className="items-center">
-              <Image
-                className="rounded-full"
-                src="/jpg/profile.jpg"
-                width={100}
-                height={100}
-                alt="Gerardo Valencia"
-              />
+            <Stack className="flex-col md:flex-row items-center space-x-0 md:space-x-4">
+              <Box className="w-[80px] md:w-[176px] relative mb-4 md:mb-0 mr-auto">
+                <Image
+                  className="rounded-full"
+                  height={176}
+                  width={176}
+                  src="/jpg/profile.jpg"
+                  sizes="30vw"
+                  priority
+                  alt="Gerardo Valencia"
+                />
+              </Box>
               <Stack direction="col" spacing="space-y-2">
                 <Box>
                   <Heading>Gerardo Valencia Rivero</Heading>
@@ -43,7 +47,7 @@ export default function Home() {
               </Stack>
             </Stack>
             <Box className="relative">
-              <div className="absolute -top-3 left-10 w-0 h-0 border-l-[12px] border-l-transparent border-b-[15px] border-b-slate-100 border-r-[12px] border-r-transparent" />
+              <div className="hidden md:block md:absolute -top-3 left-10 w-0 h-0 border-l-[12px] border-l-transparent border-b-[15px] border-b-slate-100 border-r-[12px] border-r-transparent" />
               <Stack
                 direction="col"
                 spacing="space-y-2"
@@ -62,48 +66,105 @@ export default function Home() {
                 </Text>
               </Stack>
             </Box>
-            <Stack direction="col" spacing="space-y-8">
+            <Stack
+              direction="col"
+              spacing="space-y-8"
+              className="space-between"
+            >
               <Heading size="h3">Work experience</Heading>
               <WorkExperience
                 from="2021"
                 util="Present"
                 title="Software Engineer at Perfekto"
                 location=" Mexico City, MX (Remotely)"
-                description="Founder member and part of the YC community. Develop the an web app MVP for the clients and improving the internal process for the delivery service using low-code tools to automate the process."
                 externalLink="https://perfekto.mx"
-              />
+              >
+                <Text weight="font-light">
+                  Founder member and part of the YC community. Develop the an
+                  web app MVP using Next.js as Javascript framework. Improve the
+                  internal process for the delivery service using low-code and
+                  automation tools such as Airtable and Make.
+                </Text>
+                <Text weight="font-light">
+                  Customer notification automation connecting delivery software
+                  provider to notify to the customers about their orders.
+                </Text>
+                <Text weight="font-light">
+                  Design a payment orchestrator to process automatic payments
+                  for the customers and create flexibility to apply coupons,
+                  delay payments, and add extra products to the subscription
+                  using Stripe as the payment processor.
+                </Text>
+                <Text weight="font-light">
+                  Design a payment orchestrator to process automatic payments
+                  for the customers and create flexibility to apply coupons,
+                  delay payments, and add extra products to the subscription
+                  using Stripe as the payment processor.
+                </Text>
+              </WorkExperience>
               <WorkExperience
                 from="2020"
                 util="2021"
                 title="Software Engineer at SV Academy"
                 location="San Francisco, CA (Remotely)"
-                description="Founder member and part of the YC community. Develop the an web app MVP for the clients and improving the internal process for the delivery service using low-code tools to automate the process."
                 externalLink="https://sv.academy"
-              />
+              >
+                <Text weight="font-light">
+                  Website development uses Next.js as React framework to create
+                  landing pages and application forms.
+                </Text>
+                <Text weight="font-light">
+                  Back-end development using Python and FastAPI that connects to
+                  Salesforce to send applicants data, and automation process
+                  using low-code tools such as Make.
+                </Text>
+              </WorkExperience>
               <WorkExperience
                 from="2019"
                 util="2020"
                 title="Front-end Engineer at Loft"
                 location="Mexico City, MX (Remotely)"
-                description="Founder member and part of the YC community. Develop the an web app MVP for the clients and improving the internal process for the delivery service using low-code tools to automate the process."
                 externalLink="https://truehome.com.mx"
-              />
+              >
+                <Text weight="font-light">
+                  Develop a credit simulator based on the property that the
+                  customer is watching.
+                </Text>
+                <Text weight="font-light">
+                  Maintain a real statement website that&apos;s fixing bugs and
+                  implementing new features in the detail properties page using
+                  technologies such as Next.js.
+                </Text>
+              </WorkExperience>
               <WorkExperience
                 from="2018"
                 util="2021"
                 title="Software Engineer at Yellowme"
                 location="Mérida, Yucatán, MX"
-                description="Founder member and part of the YC community. Develop the an web app MVP for the clients and improving the internal process for the delivery service using low-code tools to automate the process."
                 externalLink="https://yellowme.mx"
-              />
+              >
+                <Text weight="font-light">
+                  Front-end developer working with different clients in México
+                  and United States for creating web applications using React.
+                </Text>
+                <Text weight="font-light">
+                  Working on internal projects and tools for improving the work
+                  of the teammates.
+                </Text>
+              </WorkExperience>
               <WorkExperience
                 from="2017"
                 util="2018"
                 title="Webmaster at SIF Language School"
                 location="Veracruz, Veracruz, MX (Remotely)"
-                description="Founder member and part of the YC community. Develop the an web app MVP for the clients and improving the internal process for the delivery service using low-code tools to automate the process."
                 externalLink="https://siflanguageschool.com"
-              />
+              >
+                <Text weight="font-light">
+                  Webmaster working on the company website doing maintenance
+                  making bug fixes and adding features to the website.
+                </Text>
+                <Text weight="font-light">Working with Wordpress and PHP.</Text>
+              </WorkExperience>
             </Stack>
             <Stack direction="col" spacing="space-y-4">
               <Heading size="h3">Contact</Heading>
