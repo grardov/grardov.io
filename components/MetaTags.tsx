@@ -4,8 +4,8 @@ import Head from "next/head";
 export default function MetaTags(): React.ReactElement {
   const meta = {
     title: "Gerardo Valencia – Software Engineer.",
-    description: `software engineer passionate of create products
-    that help people around the world using web technologies.`,
+    description:
+      "Software engineer passionate of create products that help people around the world using web technologies.",
     // image: "",
     type: "website",
   };
