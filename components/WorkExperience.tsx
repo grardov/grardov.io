@@ -29,7 +29,7 @@ export default function WorkExperience({
           {from} — {util}
         </Text>
       </Box>
-      <Stack direction="col" spacing="space-y-2">
+      <Stack className="w-full md:w-auto" direction="col" spacing="space-y-2">
         <a
           href={externalLink}
           target="_blank"
@@ -41,14 +41,14 @@ export default function WorkExperience({
           </Text>
         </a>
         <Text
-          className="block md:hidden w-96"
+          className="block md:hidden w-full"
           size="text-sm"
           weight="font-light"
         >
           {from} — {util}
         </Text>
         <Text
-          className="text-gray-500 leading-6"
+          className=" text-gray-500 leading-6"
           size="text-sm"
           weight="font-light"
           span
